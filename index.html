@@ -555,20 +555,26 @@ function identityBarHTML(pid) {
         value="${state.name}" oninput="syncIdentity('${pid}')">
     </div>
     <div class="field field-codes">
-      <label>Código(s) do Bolão</label>
-      <input type="text" id="inp-codes-${pid}" placeholder="Ex: BD001, FUT002"
-        value="${state.codes}" oninput="syncIdentity('${pid}')">
-      <div class="codes-hint">Separe múltiplos códigos por vírgula &nbsp;·&nbsp; Salvo automaticamente no navegador</div>
+      <label>Grupo do Bolão</label>
+      <select id="inp-codes-${pid}" onchange="syncIdentity('${pid}')"
+        style="width:100%;background:rgba(13,33,55,.8);border:1.5px solid rgba(200,214,229,.2);border-radius:6px;padding:11px 14px;color:var(--branco);font-family:'Barlow',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s;cursor:pointer;">
+        <option value="" disabled ${!state.codes?'selected':''}>Selecione seu grupo...</option>
+        <option value="OFC26" ${state.codes==='OFC26'?'selected':''}>OFC26</option>
+        <option value="OURO35" ${state.codes==='OURO35'?'selected':''}>OURO35</option>
+        <option value="BDNACOPA26" ${state.codes==='BDNACOPA26'?'selected':''}>BDNACOPA26</option>
+      </select>
+      <div class="codes-hint">Salvo automaticamente no navegador</div>
     </div>
   </div>`;
 }
  
 function syncIdentity(pid) {
   state.name  = document.getElementById(`inp-name-${pid}`)?.value.trim() || state.name;
-  state.codes = document.getElementById(`inp-codes-${pid}`)?.value.trim() || state.codes;
+  const sel = document.getElementById(`inp-codes-${pid}`);
+  if (sel?.value) state.codes = sel.value;
   // propaga para outros campos visíveis
   document.querySelectorAll('[id^="inp-name-"]').forEach(el => el.value = state.name);
-  document.querySelectorAll('[id^="inp-codes-"]').forEach(el => el.value = state.codes);
+  document.querySelectorAll('[id^="inp-codes-"]').forEach(el => { if(el.tagName==='SELECT' && state.codes) el.value = state.codes; });
   document.querySelectorAll('[id^="saved-badge-"]').forEach(el => {
     el.classList.toggle('visible', !!(state.name));
   });
@@ -1243,4 +1249,3 @@ init();
 </script>
 </body>
 </html>
- 
