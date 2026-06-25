@@ -103,7 +103,7 @@
 <script>
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbweLyhR_mUB0HH0kHiKsrfC64RH0YJkI2xtKjbCi3Nr-oLlb9NbBDu1yhg3nkjSfUFfgg/exec';
 const EXTRAS_MAP = {extra_campeao:'🥇 Campeão',extra_vice:'🥈 Vice-Campeão',extra_terceiro:'🥉 Terceiro Colocado',extra_quarto:'4️⃣ Quarto Colocado',extra_artilheiro:'⚽ Artilheiro'};
-
+ 
 function calcPts(palH,palA,realH,realA){
   palH=parseInt(palH);palA=parseInt(palA);realH=parseInt(realH);realA=parseInt(realA);
   if(isNaN(palH)||isNaN(palA)||isNaN(realH)||isNaN(realA)) return null;
@@ -118,7 +118,7 @@ function calcPts(palH,palA,realH,realA){
   if(acertouCasa||acertouFora) return {pts:1,label:'Acertou gols de um time'};
   return {pts:0,label:'Não pontuou'};
 }
-
+ 
 function calcPtsExtras(campo,palpite,resultados){
   const pal=palpite.trim().toLowerCase();
   const resCampeao=(resultados['campeao']||'').toLowerCase();
@@ -133,7 +133,7 @@ function calcPtsExtras(campo,palpite,resultados){
   if(campo==='extra_quarto'){if(!resTerceiro||!resQuarto) return null;if(pal===resQuarto) return {pts:9,label:'Acertou o 4º lugar'};if(pal===resTerceiro) return {pts:5,label:'Time está no 3º/4º'};return {pts:0,label:'Não pontuou'};}
   return null;
 }
-
+ 
 function ptsBadge(pts){
   if(pts===null) return '<span class="pts-badge pts-pendente">Aguardando resultado</span>';
   if(pts.pts===8) return `<span class="pts-badge pts-8">+8 pts — ${pts.label}</span>`;
@@ -142,14 +142,14 @@ function ptsBadge(pts){
   if(pts.pts===1) return `<span class="pts-badge pts-1">+1 pt — ${pts.label}</span>`;
   return `<span class="pts-badge pts-0">0 pts — ${pts.label}</span>`;
 }
-
+ 
 function cardClass(pts){
   if(pts===null) return 'sem-resultado';
   if(pts.pts>=5) return 'acerto-total';
   if(pts.pts>=1) return 'acerto-parcial';
   return '';
 }
-
+ 
 async function buscar(){
   const nome=document.getElementById('inputNome').value.trim();
   if(!nome){alert('Digite seu nome!');return;}
@@ -164,7 +164,7 @@ async function buscar(){
     document.getElementById('resultado').innerHTML='<div class="error-box">⚠️ Erro ao buscar. Verifique sua conexão e tente novamente.</div>';
   }finally{btn.disabled=false;btn.textContent='Buscar';}
 }
-
+ 
 function renderResultado(data,nomeBuscado){
   const container=document.getElementById('resultado');
   if(!data.encontrado){
@@ -172,37 +172,44 @@ function renderResultado(data,nomeBuscado){
     return;
   }
   const resultados=data.resultados||{};
-  let totalPts=0,jogosComResultado=0;
-
+  let ptJogos=0, ptClassif=0, ptExtras=0, jogosComResultado=0;
+ 
   const jogosComPts=data.jogos.map(j=>{
     const res=resultados[j.id];
     let realH=null,realA=null;
     if(res){const p=res.split('-');if(p.length===2){realH=p[0];realA=p[1];}}
     const pts=(realH!==null)?calcPts(j.golsCasa,j.golsFora,realH,realA):null;
-    if(pts!==null){totalPts+=pts.pts;jogosComResultado++;}
+    if(pts!==null){ptJogos+=pts.pts;jogosComResultado++;}
     return {...j,realH,realA,pts};
   });
-
+ 
   const extrasComPts=data.extras.map(ex=>{
     const pts=calcPtsExtras(ex.campo,ex.valor,resultados);
-    if(pts!==null&&pts.pts) totalPts+=pts.pts;
+    if(pts!==null&&pts.pts) ptExtras+=pts.pts;
     return {...ex,pts};
   });
-
+ 
+  // Pontos de classificados
+  const classificados = data.classificados || [];
+  classificados.forEach(c => { if(c.pts) ptClassif += c.pts; });
+ 
+  const totalPts = ptJogos + ptClassif + ptExtras;
+ 
   const porFase={};
   jogosComPts.forEach(j=>{
     const fase=j.aba||'Outros';
     if(!porFase[fase]) porFase[fase]=[];
     porFase[fase].push(j);
   });
-
+ 
   let html=`
   <div class="result-header">
     <div><div class="result-nome">${data.nome}</div><div class="result-cod">Grupo: <span>${data.codigos||'—'}</span></div></div>
     <div class="stats-cards">
-      <div class="stat-card"><div class="stat-val">${totalPts}</div><div class="stat-lbl">pontos</div></div>
-      <div class="stat-card"><div class="stat-val">${jogosComResultado}</div><div class="stat-lbl">pontuados</div></div>
-      <div class="stat-card"><div class="stat-val">${data.jogos.length}</div><div class="stat-lbl">apostas</div></div>
+      <div class="stat-card"><div class="stat-val">${totalPts}</div><div class="stat-lbl">total</div></div>
+      <div class="stat-card"><div class="stat-val">${ptJogos}</div><div class="stat-lbl">jogos</div></div>
+      <div class="stat-card"><div class="stat-val">${ptClassif}</div><div class="stat-lbl">classif.</div></div>
+      <div class="stat-card"><div class="stat-val">${ptExtras}</div><div class="stat-lbl">extras</div></div>
     </div>
   </div>
   <div class="legenda">
@@ -210,7 +217,35 @@ function renderResultado(data,nomeBuscado){
     <div class="leg-item"><div class="leg-dot" style="background:var(--amarelo)"></div> Acerto parcial (1-3 pts)</div>
     <div class="leg-item"><div class="leg-dot" style="background:var(--cinza)"></div> Aguardando resultado</div>
   </div>`;
-
+ 
+  // Classificados dos grupos
+  const classifComPts = classificados.filter(c => c.status === 'ok');
+  const classifAguard = classificados.filter(c => c.status === 'aguardando');
+  if(classifComPts.length > 0){
+    html+=`<div class="section-title">🏅 Classificados dos Grupos</div>`;
+    classifComPts.forEach(c=>{
+      const cor = c.pts===4?'acerto-total':c.pts>=1?'acerto-parcial':'';
+      html+=`
+      <div class="jogo-card ${cor}">
+        <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center">
+          <div style="text-align:right">
+            <div style="font-size:.65rem;color:var(--cinza);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px">PALPITE</div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem">${c.palPrimeiro} / ${c.palSegundo}</div>
+          </div>
+          <div style="text-align:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--amarelo)">Grupo ${c.grupo}</div>
+          <div style="text-align:left">
+            <div style="font-size:.65rem;color:var(--cinza);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px">REAL</div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem">${c.realPrimeiro} / ${c.realSegundo}</div>
+          </div>
+        </div>
+        <div class="jogo-footer">${ptsBadge({pts:c.pts,label:c.label||''})}</div>
+      </div>`;
+    });
+    if(classifAguard.length>0){
+      html+=`<div style="font-family:'Barlow Condensed',sans-serif;font-size:.8rem;color:var(--cinza);text-align:center;padding:.5rem 0">⏳ ${classifAguard.length} grupo(s) ainda aguardando resultado</div>`;
+    }
+  }
+ 
   if(extrasComPts.length>0){
     html+=`<div class="section-title">⭐ Palpites Especiais</div>`;
     extrasComPts.forEach(ex=>{
@@ -228,7 +263,7 @@ function renderResultado(data,nomeBuscado){
       </div>`;
     });
   }
-
+ 
   Object.keys(porFase).sort().forEach(fase=>{
     html+=`<div class="section-title">${fase}</div>`;
     porFase[fase].forEach(j=>{
@@ -257,9 +292,10 @@ function renderResultado(data,nomeBuscado){
       </div>`;
     });
   });
-
+ 
   container.innerHTML=html;
 }
 </script>
 </body>
 </html>
+ 
