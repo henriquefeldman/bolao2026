@@ -21,7 +21,7 @@
       repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,.015) 60px,rgba(255,255,255,.015) 61px),
       repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,.015) 60px,rgba(255,255,255,.015) 61px);
   }
-
+ 
   /* ── HEADER ── */
   header{
     background:linear-gradient(135deg,var(--verde-escuro) 0%,var(--azul-medio) 60%,var(--azul) 100%);
@@ -33,7 +33,7 @@
   header h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,8vw,5.5rem);letter-spacing:4px;line-height:.9;text-shadow:0 0 40px rgba(0,168,107,.5);}
   header h1 span{color:var(--amarelo);}
   header p{margin-top:.75rem;color:var(--cinza-claro);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;letter-spacing:1px;}
-
+ 
   /* ── STEPS ── */
   .steps-bar{display:flex;justify-content:center;padding:1.5rem 1rem 2rem;background:rgba(22,53,84,.6);border-bottom:1px solid rgba(200,214,229,.1);overflow-x:auto;gap:0;}
   .step-item{display:flex;align-items:center;cursor:pointer;}
@@ -47,12 +47,12 @@
   .step-item.done .step-label{color:var(--amarelo);}
   .step-item.knockout .step-dot{background:var(--laranja);border-color:var(--laranja);color:#fff;}
   .step-item.knockout .step-label{color:var(--laranja);}
-
+ 
   /* ── MAIN ── */
   main{max-width:920px;margin:0 auto;padding:2rem 1rem 4rem;}
   .page{display:none;}
   .page.active{display:block;}
-
+ 
   /* ── IDENTITY BAR ── */
   .identity-bar{
     background:var(--azul-medio);border:1px solid rgba(200,214,229,.15);border-radius:12px;
@@ -74,7 +74,7 @@
   input[type=text]:focus{border-color:var(--verde);box-shadow:0 0 0 3px rgba(0,168,107,.15);}
   input[type=text]::placeholder{color:rgba(138,155,176,.45);}
   .codes-hint{font-size:.72rem;color:var(--cinza);margin-top:5px;}
-
+ 
   /* ── PAGE TITLE ── */
   .progress-wrap{background:rgba(200,214,229,.08);border-radius:4px;height:3px;margin-bottom:1.75rem;overflow:hidden;}
   .progress-fill{height:100%;background:linear-gradient(90deg,var(--verde),var(--amarelo));border-radius:4px;transition:width .4s ease;}
@@ -84,9 +84,9 @@
   .tag-group{background:var(--verde);}
   .tag-ko{background:var(--laranja);}
   .page-title p{color:var(--cinza);font-size:.88rem;margin-top:4px;}
-
+ 
   .info-box{background:rgba(0,168,107,.08);border:1px solid rgba(0,168,107,.25);border-radius:8px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--cinza-claro);display:flex;gap:.75rem;align-items:flex-start;}
-
+ 
   /* ── GROUP CARD ── */
   .group-card{background:var(--azul-medio);border:1px solid rgba(200,214,229,.1);border-radius:12px;margin-bottom:1.5rem;overflow:hidden;transition:border-color .2s;}
   .group-card:hover{border-color:rgba(200,214,229,.22);}
@@ -100,7 +100,7 @@
   .group-card.open .games-list{display:block;}
   .rodada-label{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--verde);margin:1rem 0 .6rem;}
   .rodada-label:first-child{margin-top:0;}
-
+ 
   /* ── GAME ROW ── */
   .game-row{
     display:grid;grid-template-columns:1fr auto 1fr auto;gap:10px;align-items:center;
@@ -111,7 +111,7 @@
   .game-row.confirmed{border-color:rgba(0,168,107,.45);background:rgba(0,168,107,.06);}
   .game-row.locked{opacity:.55;}
   .game-row.locked-confirmed{border-color:rgba(245,197,24,.3);background:rgba(245,197,24,.04);}
-
+ 
   .game-center{display:flex;flex-direction:column;align-items:center;gap:5px;padding:0 4px;}
   .score-inputs{display:flex;align-items:center;gap:6px;}
   .score-input{
@@ -124,17 +124,17 @@
   .score-input::-webkit-inner-spin-button,.score-input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
   .score-input:disabled{color:var(--cinza)!important;cursor:not-allowed;}
   .score-sep{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--cinza);line-height:1;}
-
+ 
   .deadline-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.63rem;letter-spacing:.8px;padding:2px 8px;border-radius:3px;white-space:nowrap;}
   .dl-open{background:rgba(0,168,107,.13);color:var(--verde);border:1px solid rgba(0,168,107,.28);}
   .dl-closed{background:rgba(255,107,53,.13);color:var(--laranja);border:1px solid rgba(255,107,53,.28);}
   .dl-confirmed{background:rgba(245,197,24,.13);color:var(--amarelo);border:1px solid rgba(245,197,24,.28);}
-
+ 
   .team-home{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
   .team-away{text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:3px;}
   .team-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;color:var(--branco);letter-spacing:.4px;line-height:1.1;}
   .team-flag{font-size:1.35rem;line-height:1;}
-
+ 
   /* ── CONFIRM BUTTON ── */
   .btn-confirm{
     width:46px;height:46px;border-radius:8px;border:1.5px solid rgba(200,214,229,.2);
@@ -147,13 +147,13 @@
   .btn-confirm.locked-confirmed{background:rgba(245,197,24,.12);border-color:var(--amarelo);color:var(--amarelo);font-size:1.2rem;}
   .btn-confirm:disabled:not(.confirmed):not(.locked-confirmed){cursor:not-allowed;opacity:.4;}
   .btn-confirm-label{font-size:.55rem;letter-spacing:1.5px;margin-top:2px;display:block;}
-
+ 
   .step-item.extras .step-dot{background:var(--azul-claro);border-color:var(--azul-claro);color:#fff;}
   .step-item.extras .step-label{color:#7eb8f7;}
   .step-item.active.extras .step-dot{background:#4a9eff;border-color:#4a9eff;box-shadow:0 0 16px rgba(74,158,255,.6);}
   .step-item.active.extras .step-label{color:#4a9eff;font-weight:600;}
   .step-item.done.extras .step-dot{background:var(--amarelo);border-color:var(--amarelo);color:var(--azul);}
-
+ 
   /* ── EXTRAS PAGE ── */
   .extras-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;}
   @media(max-width:600px){.extras-grid{grid-template-columns:1fr;}}
@@ -211,7 +211,7 @@
     grid-column:1/-1;text-align:center;font-family:'Barlow Condensed',sans-serif;
     font-size:.75rem;letter-spacing:1.5px;color:var(--cinza);padding:.5rem 0;
   }
-
+ 
   /* ── NAV BUTTONS ── */
   .nav-buttons{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;gap:1rem;}
   .btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.92rem;letter-spacing:2px;text-transform:uppercase;padding:13px 28px;border-radius:6px;border:none;cursor:pointer;transition:all .2s;}
@@ -221,7 +221,7 @@
   .btn-primary:hover{background:var(--verde-escuro);transform:translateY(-1px);}
   .btn-submit{background:var(--amarelo);color:var(--azul);font-size:.95rem;padding:15px 36px;box-shadow:0 4px 18px rgba(245,197,24,.4);}
   .btn-submit:hover{background:#e0b014;transform:translateY(-1px);}
-
+ 
   /* ── TOAST ── */
   #toast{
     position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);
@@ -231,7 +231,7 @@
     z-index:999;white-space:nowrap;
   }
   #toast.show{transform:translateX(-50%) translateY(0);}
-
+ 
   /* ── MEUS PALPITES ── */
   .meus-palpites-btn{
     position:fixed;bottom:24px;right:24px;z-index:100;
@@ -293,7 +293,7 @@
   }
   .mp-stat-val{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--amarelo);}
   .mp-stat-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:var(--cinza);letter-spacing:1px;}
-
+ 
   /* ── SUCCESS ── */
   .success-screen{display:none;text-align:center;padding:4rem 2rem;}
   .success-screen.visible{display:block;}
@@ -301,7 +301,7 @@
   @keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
   .success-screen h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:3px;color:var(--verde);margin-bottom:.75rem;}
   .success-screen p{color:var(--cinza-claro);font-size:1rem;max-width:440px;margin:0 auto;}
-
+ 
   @media(max-width:600px){
     .team-name{font-size:.78rem}.score-input{width:36px!important;font-size:1rem!important}
     header h1{font-size:2.5rem}.identity-bar{padding:1rem}
@@ -311,18 +311,18 @@
 </style>
 </head>
 <body>
-
+ 
 <header>
   <div class="header-badge">⚽ BOLÃO OFICIAL</div>
   <h1>COPA DO MUNDO <span>2026</span></h1>
   <p>EUA · México · Canadá &nbsp;|&nbsp; 11 Jun — 19 Jul 2026</p>
 </header>
-
+ 
 <div class="steps-bar" id="stepsBar"></div>
-
+ 
 <main>
 <button class="meus-palpites-btn" onclick="abrirMeusPalpites()">📋 Meus Palpites</button>
-
+ 
 <div class="mp-overlay" id="mpOverlay">
   <div class="mp-header">
     <h2>📋 MEUS PALPITES</h2>
@@ -330,12 +330,12 @@
   </div>
   <div class="mp-content" id="mpContent"></div>
 </div>
-
+ 
 <div id="formPages"></div>
 </main>
-
+ 
 <div id="toast">✓ Palpite confirmado!</div>
-
+ 
 <script>
 // ════════════════════════════════════════════════════════════════════
 //  ⚙️  CONFIGURAÇÃO DO MATA-MATA
@@ -367,16 +367,16 @@ const KNOCKOUT_CONFIG = {
     { id:'r16_02', label:'Jogo 90', home:'Paraguai 🇵🇾', away:'França 🇫🇷',      iso:'2026-07-04T18:00', local:'04/07 · 18h' },
     { id:'r16_03', label:'Jogo 91', home:'Brasil 🇧🇷',   away:'Noruega 🇳🇴',     iso:'2026-07-05T17:00', local:'05/07 · 17h' },
     { id:'r16_04', label:'Jogo 92', home:'México 🇲🇽',   away:'Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿', iso:'2026-07-05T21:00', local:'05/07 · 21h' },
-    { id:'r16_05', label:'Jogo 93', home:'',             away:'',               iso:'2026-07-06T16:00', local:'06/07 · 16h' },
+    { id:'r16_05', label:'Jogo 93', home:'Portugal 🇵🇹',  away:'Espanha 🇪🇸',   iso:'2026-07-06T16:00', local:'06/07 · 16h' },
     { id:'r16_06', label:'Jogo 94', home:'EUA 🇺🇸',      away:'Bélgica 🇧🇪',     iso:'2026-07-06T21:00', local:'06/07 · 21h' },
-    { id:'r16_07', label:'Jogo 95', home:'',             away:'',               iso:'2026-07-07T13:00', local:'07/07 · 13h' },
-    { id:'r16_08', label:'Jogo 96', home:'',             away:'',               iso:'2026-07-07T17:00', local:'07/07 · 17h' },
+    { id:'r16_07', label:'Jogo 95', home:'Argentina 🇦🇷', away:'Egito 🇪🇬',      iso:'2026-07-07T13:00', local:'07/07 · 13h' },
+    { id:'r16_08', label:'Jogo 96', home:'Suíça 🇨🇭',     away:'Colômbia 🇨🇴',   iso:'2026-07-07T17:00', local:'07/07 · 17h' },
   ],
   qf: [
-    { id:'qf_01', label:'Jogo 97', home:'', away:'', iso:'2026-07-09T21:00', local:'Boston' },
-    { id:'qf_02', label:'Jogo 98', home:'', away:'', iso:'2026-07-10T21:00', local:'Los Angeles' },
-    { id:'qf_03', label:'Jogo 99', home:'', away:'', iso:'2026-07-12T18:00', local:'Miami' },
-    { id:'qf_04', label:'Jogo 100',home:'', away:'', iso:'2026-07-12T21:00', local:'Kansas City' },
+    { id:'qf_01', label:'Jogo 97', home:'França 🇫🇷',   away:'Marrocos 🇲🇦', iso:'2026-07-09T17:00', local:'09/07 · 17h' },
+    { id:'qf_02', label:'Jogo 98', home:'', away:'', iso:'2026-07-10T21:00', local:'10/07 · 21h' },
+    { id:'qf_03', label:'Jogo 99', home:'', away:'', iso:'2026-07-12T18:00', local:'12/07 · 18h' },
+    { id:'qf_04', label:'Jogo 100',home:'', away:'', iso:'2026-07-12T21:00', local:'12/07 · 21h' },
   ],
   sf: [
     { id:'sf_01', label:'Jogo 101', home:'', away:'', iso:'2026-07-14T21:00', local:'Dallas' },
@@ -389,7 +389,7 @@ const KNOCKOUT_CONFIG = {
     { id:'fin_01', label:'FINAL',   home:'', away:'', iso:'2026-07-19T17:00', local:'Nova York' },
   ]
 };
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  JOGOS DA FASE DE GRUPOS (horário de Brasília)
 // ════════════════════════════════════════════════════════════════════
@@ -470,20 +470,20 @@ const ALL_GAMES = [
   {g:'J',r:3,home:'Argélia 🇩🇿',         away:'Áustria 🇦🇹',           iso:'2026-06-27T23:00'},
   {g:'J',r:3,home:'Jordânia 🇯🇴',        away:'Argentina 🇦🇷',         iso:'2026-06-27T23:00'},
 ];
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  ESTADO
 // ════════════════════════════════════════════════════════════════════
 const LS_KEY = 'bolao2026_v2';
 let state = { name:'', codes:'', picks:{}, confirmed:{} };
-
+ 
 function loadState() {
   try { const s = JSON.parse(localStorage.getItem(LS_KEY)); if(s) state = s; } catch(e){}
 }
 function saveState() {
   try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){}
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  TEMPO
 // ════════════════════════════════════════════════════════════════════
@@ -498,7 +498,7 @@ function isLocked(iso)   { return Date.now() >= deadlineOf(iso).getTime(); }
 function fmtDeadline(iso) {
   return deadlineOf(iso).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'});
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  PÁGINAS
 // ════════════════════════════════════════════════════════════════════
@@ -517,7 +517,7 @@ const KO_PHASES = [
 const EXTRAS_PAGE = { id:'extras', label:'Palpites Extras', isExtras:true };
 const ALL_PAGES = [EXTRAS_PAGE, ...GROUP_PAGES, ...KO_PHASES];
 let currentPage = 0;
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  STEPS
 // ════════════════════════════════════════════════════════════════════
@@ -540,7 +540,7 @@ function buildSteps() {
       </div>`;
   }).join('');
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  IDENTITY BAR
 // ════════════════════════════════════════════════════════════════════
@@ -567,7 +567,7 @@ function identityBarHTML(pid) {
     </div>
   </div>`;
 }
-
+ 
 function syncIdentity(pid) {
   state.name  = document.getElementById(`inp-name-${pid}`)?.value.trim() || state.name;
   const sel = document.getElementById(`inp-codes-${pid}`);
@@ -580,7 +580,7 @@ function syncIdentity(pid) {
   });
   saveState();
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  BUILD FASE DE GRUPOS
 // ════════════════════════════════════════════════════════════════════
@@ -602,20 +602,20 @@ function buildGroupPage(page, pi) {
     ${navButtons(pi)}
   </div>`;
 }
-
+ 
 function buildGroupCard(g) {
   const games = ALL_GAMES.filter(x=>x.g===g);
   const teams = [...new Set(games.flatMap(x=>[x.home,x.away]))].map(t=>t.replace(/\s\S+$/,'')).join(' · ');
   const total = games.length;
   const confirmed = games.filter(x=>state.confirmed[gameId(x)]).length;
   const pct = total>0?Math.round(confirmed/total*100):0;
-
+ 
   const rounds = [1,2,3].map(r=>({r, games: games.filter(x=>x.r===r)}));
   const gamesHtml = rounds.map(round=>`
     <div class="rodada-label">🗓 Rodada ${round.r}</div>
     ${round.games.map(game => gameRowHTML(game)).join('')}
   `).join('');
-
+ 
   return `
   <div class="group-card" id="gc-${g}">
     <div class="group-header" onclick="toggleGroup('gc-${g}')">
@@ -627,9 +627,9 @@ function buildGroupCard(g) {
     <div class="games-list">${gamesHtml}</div>
   </div>`;
 }
-
+ 
 function gameId(game) { return `${game.g}_r${game.r}_${game.home.replace(/\s\S+$/,'')}_${game.away.replace(/\s\S+$/,'')}`; }
-
+ 
 function gameRowHTML(game) {
   const id   = gameId(game);
   const lk   = isLocked(game.iso);
@@ -637,19 +637,19 @@ function gameRowHTML(game) {
   const ph   = state.picks[id]?.h ?? '';
   const pa   = state.picks[id]?.a ?? '';
   const dl   = fmtDeadline(game.iso);
-
+ 
   let rowCls = '';
   let btnCls = '';
   let dlTag  = '';
   let btnDisabled = '';
-
+ 
   if(lk && conf)  { rowCls='locked-confirmed'; btnCls='locked-confirmed'; dlTag=`<span class="deadline-tag dl-confirmed">✓ Confirmado</span>`; btnDisabled='disabled'; }
   else if(lk)     { rowCls='locked';            btnCls='';                  dlTag=`<span class="deadline-tag dl-closed">🔒 Encerrado</span>`;   btnDisabled='disabled'; }
   else if(conf)   { rowCls='confirmed';          btnCls='confirmed';         dlTag=`<span class="deadline-tag dl-confirmed">✓ Até ${dl}</span>`;  }
   else            {                              btnCls='';                  dlTag=`<span class="deadline-tag dl-open">⏰ Até ${dl}</span>`; }
-
+ 
   const inputDis = (lk && conf) || lk ? 'disabled' : '';
-
+ 
   return `
   <div class="game-row ${rowCls}" id="row-${id}">
     <div class="team-home">
@@ -682,14 +682,14 @@ function gameRowHTML(game) {
     </button>
   </div>`;
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  BUILD MATA-MATA
 // ════════════════════════════════════════════════════════════════════
 function buildKOPage(phase, pi) {
   const progress = Math.round(((pi+1)/ALL_PAGES.length)*100);
   let matchesHtml = '';
-
+ 
   if(phase.key === 'final_tp') {
     matchesHtml = `
       <div class="ko-phase-title">3º Lugar</div>
@@ -699,7 +699,7 @@ function buildKOPage(phase, pi) {
   } else {
     matchesHtml = KNOCKOUT_CONFIG[phase.key].map(m=>koMatchHTML(m)).join('');
   }
-
+ 
   return `
   <div class="page" id="page-${pi}">
     ${identityBarHTML(pi)}
@@ -716,7 +716,7 @@ function buildKOPage(phase, pi) {
     ${navButtons(pi)}
   </div>`;
 }
-
+ 
 function koMatchHTML(match) {
   const pending = !match.home || !match.away;
   const id = match.id;
@@ -725,12 +725,12 @@ function koMatchHTML(match) {
   const ph = state.picks[id]?.h ?? '';
   const pa = state.picks[id]?.a ?? '';
   const dl = fmtDeadline(match.iso);
-
+ 
   if(pending) return `
   <div class="ko-match-card pending">
     <div class="pending-label">⏳ ${match.label} — ${match.local} · Classificados ainda não definidos</div>
   </div>`;
-
+ 
   let cardCls = conf ? 'confirmed' : '';
   let btnCls  = conf ? 'confirmed' : '';
   let dlTag   = conf
@@ -738,7 +738,7 @@ function koMatchHTML(match) {
     : `<span class="deadline-tag dl-open">⏰ Até ${dl}</span>`;
   let inputDis = '';
   let btnDis  = '';
-
+ 
   if(lk) {
     cardCls = conf ? 'locked-confirmed' : 'locked';
     btnCls  = conf ? 'locked-confirmed' : '';
@@ -746,12 +746,12 @@ function koMatchHTML(match) {
     inputDis = 'disabled';
     btnDis   = 'disabled';
   }
-
+ 
   const hName = match.home.replace(/\s\S+$/,'');
   const aName = match.away.replace(/\s\S+$/,'');
   const hFlag = match.home.split(' ').pop();
   const aFlag = match.away.split(' ').pop();
-
+ 
   return `
   <div class="ko-match-card ${cardCls}" id="row-${id}">
     <div class="team-home">
@@ -785,7 +785,7 @@ function koMatchHTML(match) {
     </button>
   </div>`;
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  NAV BUTTONS
 // ════════════════════════════════════════════════════════════════════
@@ -799,7 +799,7 @@ function navButtons(pi) {
       :`<button class="btn btn-primary" onclick="showPage(${pi+1})">Próxima fase →</button>`}
   </div>`;
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  INTERAÇÕES
 // ════════════════════════════════════════════════════════════════════
@@ -815,7 +815,7 @@ function onPickChange(id, iso) {
   }
   saveState();
 }
-
+ 
 function onKOPickChange(id, iso) {
   if(isLocked(iso)) return;
   const h = document.getElementById(`${id}-h`)?.value;
@@ -827,7 +827,7 @@ function onKOPickChange(id, iso) {
   }
   saveState();
 }
-
+ 
 function confirmPick(id, grp, iso) {
   if(isLocked(iso)) return;
   const h = document.getElementById(`${id}-h`)?.value;
@@ -842,7 +842,7 @@ function confirmPick(id, grp, iso) {
   updateGroupProgress(grp);
   showToast('✓ Palpite confirmado e enviado!');
 }
-
+ 
 function confirmKOPick(id, iso) {
   if(isLocked(iso)) return;
   const h = document.getElementById(`${id}-h`)?.value;
@@ -856,7 +856,7 @@ function confirmKOPick(id, iso) {
   refreshKORow(id, iso);
   showToast('✓ Palpite confirmado e enviado!');
 }
-
+ 
 function refreshGameRow(id, iso) {
   const lk   = isLocked(iso);
   const conf = !!state.confirmed[id];
@@ -864,14 +864,14 @@ function refreshGameRow(id, iso) {
   const btn  = document.getElementById(`btn-${id}`);
   if(!row||!btn) return;
   const dl = fmtDeadline(iso);
-
+ 
   row.className = 'game-row';
   btn.disabled = false;
-
+ 
   const btnInner = (icon, label) => `<span style="display:flex;flex-direction:column;align-items:center;gap:1px"><span style="font-size:1.1rem">${icon}</span><span style="font-size:.5rem;letter-spacing:1.5px;opacity:.8">${label}</span></span>`;
   const center = row.querySelector('.game-center');
   let dlHtml = '';
-
+ 
   if(lk && conf) {
     row.classList.add('locked-confirmed');
     btn.className='btn-confirm locked-confirmed'; btn.disabled=true; btn.innerHTML=btnInner('✓','OK');
@@ -893,7 +893,7 @@ function refreshGameRow(id, iso) {
   const existing = center.querySelector('.deadline-tag');
   if(existing) existing.outerHTML = dlHtml;
 }
-
+ 
 function refreshKORow(id, iso) {
   const lk   = isLocked(iso);
   const conf = !!state.confirmed[id];
@@ -901,12 +901,12 @@ function refreshKORow(id, iso) {
   const btn  = document.getElementById(`btn-${id}`);
   if(!row||!btn) return;
   const dl = fmtDeadline(iso);
-
+ 
   const btnInner = (icon, label) => `<span style="display:flex;flex-direction:column;align-items:center;gap:1px"><span style="font-size:1.1rem">${icon}</span><span style="font-size:.5rem;letter-spacing:1.5px;opacity:.8">${label}</span></span>`;
   row.className = 'ko-match-card';
   btn.disabled = false;
   let dlHtml = '';
-
+ 
   if(lk && conf) {
     row.classList.add('locked-confirmed');
     btn.className='btn-confirm locked-confirmed'; btn.disabled=true; btn.innerHTML=btnInner('✓','OK');
@@ -929,22 +929,22 @@ function refreshKORow(id, iso) {
   const existing = center?.querySelector('.deadline-tag');
   if(existing) existing.outerHTML = dlHtml;
 }
-
+ 
 function updateGroupProgress(grp) {
   const games = ALL_GAMES.filter(x=>x.g===grp);
   const confirmed = games.filter(x=>state.confirmed[gameId(x)]).length;
   const el = document.getElementById(`gp-${grp}`);
   if(el) el.textContent = `${confirmed}/${games.length} confirmados`;
 }
-
+ 
 function toggleGroup(id) { document.getElementById(id).classList.toggle('open'); }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  PALPITES EXTRAS
 // ════════════════════════════════════════════════════════════════════
 // Prazo igual ao do primeiro jogo: México × África do Sul = 11/06 16:00 BRT → deadline 14:00
 const EXTRAS_ISO = '2026-06-11T16:00';
-
+ 
 const EXTRA_FIELDS = [
   { id:'extra_campeao',   icon:'🥇', title:'Campeão',         placeholder:'Ex: Brasil, França...' },
   { id:'extra_vice',      icon:'🥈', title:'Vice-Campeão',    placeholder:'Ex: Argentina, Espanha...' },
@@ -952,12 +952,12 @@ const EXTRA_FIELDS = [
   { id:'extra_quarto',    icon:'4️⃣', title:'Quarto Colocado', placeholder:'Ex: Inglaterra, Holanda...' },
   { id:'extra_artilheiro',icon:'⚽', title:'Artilheiro',      placeholder:'Ex: Mbappé, Vini Jr...', wide:true },
 ];
-
+ 
 function buildExtrasPage(pi) {
   const progress = Math.round(((pi+1)/ALL_PAGES.length)*100);
   const lk  = isLocked(EXTRAS_ISO);
   const dl  = fmtDeadline(EXTRAS_ISO);
-
+ 
   const cardsHtml = EXTRA_FIELDS.map(f => {
     const val  = state.picks[f.id]?.v || '';
     const conf = !!state.confirmed[f.id];
@@ -966,7 +966,7 @@ function buildExtrasPage(pi) {
     let dlHtml  = '';
     let inputDis = '';
     let btnDis  = '';
-
+ 
     if(lk && conf) {
       cardCls='locked-confirmed'; btnCls='locked-confirmed';
       dlHtml=`<span class="extra-dl-tag dl-confirmed">✓ Confirmado</span>`;
@@ -979,7 +979,7 @@ function buildExtrasPage(pi) {
     } else {
       dlHtml=`<span class="extra-dl-tag dl-open">⏰ Até ${dl}</span>`;
     }
-
+ 
     const wide = f.wide ? 'grid-column:1/-1;' : '';
     return `
     <div class="extra-card ${cardCls}" id="ecard-${f.id}" style="${wide}">
@@ -999,7 +999,7 @@ function buildExtrasPage(pi) {
       </div>
     </div>`;
   }).join('');
-
+ 
   return `
   <div class="page ${pi===0?'active':''}" id="page-${pi}">
     ${identityBarHTML(pi)}
@@ -1016,7 +1016,7 @@ function buildExtrasPage(pi) {
     ${navButtons(pi)}
   </div>`;
 }
-
+ 
 function onExtraChange(id) {
   if(isLocked(EXTRAS_ISO)) return;
   const val = document.getElementById(id)?.value.trim();
@@ -1027,7 +1027,7 @@ function onExtraChange(id) {
   }
   saveState();
 }
-
+ 
 function confirmExtra(id) {
   if(isLocked(EXTRAS_ISO)) return;
   const val = document.getElementById(id)?.value.trim();
@@ -1040,7 +1040,7 @@ function confirmExtra(id) {
   refreshExtraCard(id);
   showToast('✓ Palpite confirmado e enviado!');
 }
-
+ 
 function refreshExtraCard(id) {
   const lk   = isLocked(EXTRAS_ISO);
   const conf = !!state.confirmed[id];
@@ -1049,12 +1049,12 @@ function refreshExtraCard(id) {
   const inp  = document.getElementById(id);
   if(!card||!btn||!inp) return;
   const dl   = fmtDeadline(EXTRAS_ISO);
-
+ 
   card.className = 'extra-card';
   btn.disabled   = false;
   inp.disabled   = false;
   let dlHtml = '';
-
+ 
   if(lk && conf) {
     card.classList.add('locked-confirmed'); btn.className='extra-btn locked-confirmed';
     btn.disabled=true; inp.disabled=true; btn.textContent='✓ OK';
@@ -1074,7 +1074,7 @@ function refreshExtraCard(id) {
   const existing = row?.querySelector('.extra-dl-tag');
   if(existing) existing.outerHTML = dlHtml;
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  MEUS PALPITES
 // ════════════════════════════════════════════════════════════════════
@@ -1084,17 +1084,17 @@ function abrirMeusPalpites() {
   document.getElementById('mpOverlay').classList.add('visible');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
+ 
 function fecharMeusPalpites() {
   document.getElementById('mpOverlay').classList.remove('visible');
 }
-
+ 
 function renderMeusPalpites() {
   const container = document.getElementById('mpContent');
   const totalJogos = ALL_GAMES.length;
   const confirmados = ALL_GAMES.filter(g => state.confirmed[gameId(g)]).length;
   const extrasConf = EXTRA_FIELDS.filter(f => state.confirmed[f.id]).length;
-
+ 
   let html = `
     <div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;color:var(--cinza-claro);margin-bottom:1.5rem;">
       <strong style="color:var(--branco)">${state.name}</strong> &nbsp;·&nbsp; Código: <strong style="color:var(--amarelo)">${state.codes || '—'}</strong>
@@ -1104,7 +1104,7 @@ function renderMeusPalpites() {
       <div><div class="mp-stat-val">${totalJogos}</div><div class="mp-stat-lbl">Total de jogos</div></div>
       <div><div class="mp-stat-val">${extrasConf}</div><div class="mp-stat-lbl">Extras confirmados</div></div>
     </div>`;
-
+ 
   // Palpites extras
   html += `<div class="mp-section-title">⭐ Palpites Especiais</div>`;
   EXTRA_FIELDS.forEach(f => {
@@ -1119,7 +1119,7 @@ function renderMeusPalpites() {
       <div class="mp-status ${conf?'confirmado':'pendente'}">${conf?'✓ CONFIRMADO':'Pendente'}</div>
     </div>`;
   });
-
+ 
   // Jogos por grupo
   const GROUP_LETTERS = ['A','B','C','D','E','F','G','H','I','J','K','L'];
   GROUP_LETTERS.forEach(g => {
@@ -1145,7 +1145,7 @@ function renderMeusPalpites() {
       </div>`;
     });
   });
-
+ 
   // Mata-mata
   const koFases = [
     { label:'16-avos de Final', key:'r32' },
@@ -1177,10 +1177,10 @@ function renderMeusPalpites() {
       </div>`;
     });
   });
-
+ 
   container.innerHTML = html;
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  NAVEGAÇÃO
 // ════════════════════════════════════════════════════════════════════
@@ -1192,13 +1192,13 @@ function showPage(n) {
   buildSteps();
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  ENVIO — dispara a cada confirmação individual
 // ════════════════════════════════════════════════════════════════════
 // ⚙️ Substitua pela URL do seu Google Apps Script Web App
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbweLyhR_mUB0HH0kHiKsrfC64RH0YJkI2xtKjbCi3Nr-oLlb9NbBDu1yhg3nkjSfUFfgg/exec';
-
+ 
 function sendPick(pickId, pickValue) {
   if(!state.name || !state.codes) return; // silencioso se ainda não preencheu identidade
   const payload = {
@@ -1214,7 +1214,7 @@ function sendPick(pickId, pickValue) {
     body: JSON.stringify(payload)
   }).catch(()=>{}); // falha silenciosa — dado já está no localStorage
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  TOAST
 // ════════════════════════════════════════════════════════════════════
@@ -1227,7 +1227,7 @@ function showToast(msg, color) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(()=>t.classList.remove('show'), 2400);
 }
-
+ 
 // ════════════════════════════════════════════════════════════════════
 //  INIT
 // ════════════════════════════════════════════════════════════════════
@@ -1244,8 +1244,17 @@ function init() {
   container.innerHTML = html;
   buildSteps();
 }
-
+ 
 init();
 </script>
 </body>
 </html>
+ 
+
+
+
+
+
+
+
+
