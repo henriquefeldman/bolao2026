@@ -264,13 +264,40 @@ function renderResultado(data,nomeBuscado){
     });
   }
  
+// Mapa de nomes dos jogos do mata-mata
+const JOGOS_NOMES = {
+  'r32_01':'África do Sul × Canadá','r32_02':'Brasil × Japão','r32_03':'Alemanha × Paraguai',
+  'r32_04':'Holanda × Marrocos','r32_05':'Costa do Marfim × Noruega','r32_06':'França × Suécia',
+  'r32_07':'México × Equador','r32_08':'Inglaterra × RD Congo','r32_09':'Bélgica × Senegal',
+  'r32_10':'EUA × Bósnia-Herz.','r32_11':'Espanha × Áustria','r32_12':'Portugal × Croácia',
+  'r32_13':'Suíça × Argélia','r32_14':'Austrália × Egito','r32_15':'Argentina × Cabo Verde',
+  'r32_16':'Colômbia × Gana',
+  'r16_01':'Canadá × Marrocos','r16_02':'Paraguai × França','r16_03':'Brasil × Noruega',
+  'r16_04':'México × Inglaterra','r16_05':'Portugal × Espanha','r16_06':'EUA × Bélgica',
+  'r16_07':'Argentina × Egito','r16_08':'Suíça × Colômbia',
+  'qf_01':'França × Marrocos','qf_02':'Espanha × Bélgica','qf_03':'Noruega × Inglaterra','qf_04':'Argentina × Suíça',
+  'sf_01':'Jogo 101','sf_02':'Jogo 102',
+  'tp_01':'3º Lugar','fin_01':'Final'
+};
+ 
   Object.keys(porFase).sort().forEach(fase=>{
     html+=`<div class="section-title">${fase}</div>`;
     porFase[fase].forEach(j=>{
-      const semGrupo=j.id.replace(/^[A-L]_r\d_/,'');
-      const us=semGrupo.indexOf('_');
-      const homeTeam=us>-1?semGrupo.substring(0,us):semGrupo;
-      const awayTeam=us>-1?semGrupo.substring(us+1):'';
+      let homeTeam='', awayTeam='';
+      // Fase de grupos — extrai do ID
+      const grupoMatch = j.id.match(/^[a-l]_r\d_(.+)/i);
+      if(grupoMatch) {
+        const semGrupo = grupoMatch[1];
+        const us = semGrupo.indexOf('_');
+        homeTeam = us>-1 ? semGrupo.substring(0,us) : semGrupo;
+        awayTeam = us>-1 ? semGrupo.substring(us+1) : '';
+      } else {
+        // Mata-mata — busca no mapa de nomes
+        const nomeJogo = JOGOS_NOMES[j.id] || j.id;
+        const partes = nomeJogo.split('×');
+        homeTeam = partes[0]?.trim() || j.id;
+        awayTeam = partes[1]?.trim() || '';
+      }
       const temReal=j.realH!==null;
       html+=`<div class="jogo-card ${cardClass(j.pts)}">
         <div class="jogo-grid">
@@ -298,3 +325,12 @@ function renderResultado(data,nomeBuscado){
 </script>
 </body>
 </html>
+ 
+
+
+
+
+
+
+
+
