@@ -292,8 +292,10 @@ const JOGOS_NOMES = {
         homeTeam = us>-1 ? semGrupo.substring(0,us) : semGrupo;
         awayTeam = us>-1 ? semGrupo.substring(us+1) : '';
       } else {
-        // Mata-mata — busca no mapa de nomes
-        const nomeJogo = JOGOS_NOMES[j.id] || j.id;
+        // Mata-mata — tenta ID exato primeiro, depois pelo prefixo
+        const prefixoMatch = j.id.match(/^([a-z]+_\d+)/);
+        const prefixo = prefixoMatch?.[1] || j.id;
+        const nomeJogo = JOGOS_NOMES[j.id] || JOGOS_NOMES[prefixo] || j.id;
         const partes = nomeJogo.split('×');
         homeTeam = partes[0]?.trim() || j.id;
         awayTeam = partes[1]?.trim() || '';
